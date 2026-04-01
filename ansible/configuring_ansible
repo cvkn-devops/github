@@ -31,5 +31,10 @@ in FEDORA Distors
     podman pull registry.redhat.io/ansible-automation-platform-26/ee-supported-rhel8
     
 # This repo also you can use    
-    ghcr.io/ansible/creator-ee:v0.22.0
+    podman pull ghcr.io/ansible/creator-ee:v0.22.0
+
+# Now check the configured Collections/modules using 
+    ansible-navigator images
+
+# now the setup finished
 
