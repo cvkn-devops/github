@@ -1,0 +1,40 @@
+in FEDORA Distors
+
+# To setup reposotories for packages 
+    sudo dnf install epel-release -y
+    sudo dnf install python3-pip
+
+# to install ansible package
+    sudo dnf install ansible -y
+
+# Ansible navigatior is not available for opensource so we have to install it using python pip module
+    python3 -m pip install --upgrade pip
+    python3 -m pip install ansible-navigator -y
+
+
+# Now we need to setup ansible environment to run ansible
+    
+# we need to use Docker/podman for downloading the Docker image file for setting up the required modules/collections
+    sudo yum install podman -y
+
+# login to podman registries to download the image from the podman redhat registry
+    podman login registry.redhat.io
+    username:
+    password:
+
+# now search for the images available to download 
+    podman search ee-supported-rhel9
+    podman search ee-supported-rhel8
+
+# download the image files 
+    podman pull registry.redhat.io/ansible-automation-platform-26/ee-supported-rhel9
+    podman pull registry.redhat.io/ansible-automation-platform-26/ee-supported-rhel8
+    
+# This repo also you can use    
+    podman pull ghcr.io/ansible/creator-ee:v0.22.0
+
+# Now check the configured Collections/modules using 
+    ansible-navigator images
+
+# now the setup finished
+

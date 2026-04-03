@@ -1,0 +1,8 @@
+---
+ansible-navigator:
+  execution-environment:
+    image: registry.redhat.io/ansible-automation-platform-26/ee-supported-rhel9
+    pull:
+      policy: missing
+  playbook-artifact:
+    enable: false
